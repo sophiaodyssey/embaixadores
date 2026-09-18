@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kit do Embaixador — Camelia Labs</title>
+<meta name="description" content="Identidade visual mínima da Camelia Labs para embaixadores: logos, cores, fontes, gerador de posts e textos prontos.">
+<link rel="icon" href="kit/camelia-avatar-coral.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600&family=Google+Sans+Code:wght@300;400;500&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --coral:#FA733C;--coral-dark:#C9521E;--coral-hover:#FF8A54;--marrom:#552614;--creme:#FFF7E4;--verde:#F4F55B;--lilas:#E2D0FA;--chumbo:#232323;
+  --creme-alt:#FFEFD2;--creme-card:#FFFBF0;--borda:#EBDCBB;--tit:#2E1A10;--corpo:#6B5040;--pixel:#A6876C;--lilas-txt:#9E7FDB;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Figtree,system-ui,sans-serif;background:var(--creme);color:var(--corpo);line-height:1.5;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img{display:block;max-width:100%}
+.wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+.eyebrow{font-family:Silkscreen,monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--coral)}
+h1,h2,h3{color:var(--tit);letter-spacing:-.03em;line-height:1.05}
+h1{font-family:Fraunces,serif;font-weight:400;font-size:clamp(40px,7vw,72px);margin:14px 0 18px}
+h2{font-family:Fraunces,serif;font-weight:400;font-size:clamp(30px,4.6vw,46px);margin:10px 0 14px}
+h3{font-size:19px;font-weight:600;letter-spacing:-.01em;margin-bottom:6px}
+p.lead{font-size:18px;max-width:640px}
+section{padding:72px 0;border-top:1px solid var(--borda)}
+section.alt{background:var(--creme-alt)}
+.grid{display:grid;gap:18px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.card{background:#fff;border:1px solid var(--borda);border-radius:20px;padding:22px;box-shadow:0 30px 80px -40px rgba(85,38,20,.25)}
+.mono{font-family:'Google Sans Code','IBM Plex Mono',monospace;font-size:13px}
+.pix{font-family:Silkscreen,monospace;font-size:10px;text-transform:uppercase;letter-spacing:.05em;color:var(--pixel)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:12px;background:var(--coral);color:#fff;font-weight:600;font-size:15px;text-decoration:none;border:0;cursor:pointer;font-family:inherit;box-shadow:0 4px 0 var(--coral-dark);transition:transform .08s,box-shadow .08s}
+.btn:hover{background:var(--coral-hover)}
+.btn:active{transform:translateY(4px);box-shadow:0 0 0 var(--coral-dark)}
+.btn.sec{background:#fff;color:var(--tit);border:1px solid var(--borda);box-shadow:0 4px 0 var(--borda)}
+.btn.sec:hover{background:var(--creme-card)}
+.btn.sec:active{box-shadow:0 0 0 var(--borda)}
+.btn.sm{padding:9px 14px;font-size:13px;border-radius:10px}
+/* logos */
+.logo-tile{border-radius:20px;padding:34px;display:flex;align-items:center;justify-content:center;min-height:180px;position:relative;overflow:hidden}
+.logo-tile img{width:70%;max-width:320px;image-rendering:pixelated}
+.logo-tile img.sym{width:42%;max-width:120px}
+.logo-tile .lbl{position:absolute;left:14px;top:12px}
+.logo-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+/* cores */
+.sw{border-radius:20px;padding:20px;min-height:150px;display:flex;flex-direction:column;justify-content:flex-end;cursor:pointer;border:1px solid rgba(85,38,20,.08);position:relative;transition:transform .12s}
+.sw:hover{transform:translateY(-3px)}
+.sw b{font-size:18px;display:block}
+.sw .hex{font-family:'Google Sans Code',monospace;font-size:14px;opacity:.85}
+.sw .cp{position:absolute;top:14px;right:14px;font-family:Silkscreen,monospace;font-size:9px;text-transform:uppercase;opacity:.7}
+/* fontes */
+.font-sample{font-size:38px;line-height:1.1;color:var(--tit);margin:8px 0 10px}
+/* gerador */
+.gen{display:grid;grid-template-columns:340px 1fr;gap:26px;align-items:start}
+@media(max-width:820px){.gen{grid-template-columns:1fr}}
+.field{margin-bottom:14px}
+.field label{display:block;font-family:Silkscreen,monospace;font-size:10px;text-transform:uppercase;letter-spacing:.05em;color:var(--pixel);margin-bottom:6px}
+.field input,.field select,.field textarea{width:100%;padding:11px 12px;border:1px solid var(--borda);border-radius:10px;background:var(--creme-card);font-family:inherit;font-size:15px;color:var(--tit)}
+.field textarea{min-height:70px;resize:vertical}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{width:38px;height:38px;border-radius:10px;border:2px solid transparent;cursor:pointer}
+.chip.on{border-color:var(--tit);box-shadow:0 0 0 2px #fff inset}
+.preview{background:#fff;border:1px solid var(--borda);border-radius:20px;padding:18px;display:flex;flex-direction:column;align-items:center;gap:14px}
+.preview canvas{max-width:100%;max-height:640px;border-radius:8px;box-shadow:0 30px 80px -30px rgba(85,38,20,.35)}
+/* textos */
+.txt{position:relative}
+.txt p{white-space:pre-wrap;color:var(--tit);font-size:15px;margin-top:8px}
+.txt .btn{margin-top:14px}
+/* pode/não */
+.rule{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--borda)}
+.rule:last-child{border:0}
+.rule i{font-style:normal;font-family:Silkscreen,monospace;font-size:10px;padding:5px 8px;border-radius:6px;flex-shrink:0;margin-top:3px}
+.ok i{background:var(--verde);color:var(--marrom)}
+.no i{background:var(--marrom);color:var(--creme)}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(20px);background:var(--marrom);color:var(--creme);padding:10px 18px;border-radius:12px;font-family:Silkscreen,monospace;font-size:11px;text-transform:uppercase;opacity:0;transition:.25s;pointer-events:none}
+.toast.show{opacity:1;transform:translateX(-50%)}
+.pixel-grid-bg{background-color:var(--creme);background-image:radial-gradient(rgba(85,38,20,.12) 1px,transparent 1px);background-size:14px 14px}
+footer{padding:40px 0;border-top:1px solid var(--borda);font-size:13px}
+.hero{padding:70px 0 60px}
+.hero img{height:38px;image-rendering:pixelated;margin-bottom:28px}
+.ctas{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+nav{position:sticky;top:0;z-index:5;background:rgba(255,247,228,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--borda)}
+nav .wrap{display:flex;gap:18px;overflow-x:auto;padding:12px 20px;font-family:Silkscreen,monospace;font-size:10px;text-transform:uppercase;letter-spacing:.05em}
+nav a{text-decoration:none;color:var(--pixel);white-space:nowrap}
+nav a:hover{color:var(--coral)}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <a href="#logo">Logo</a><a href="#cores">Cores</a><a href="#fontes">Fontes</a><a href="#gerador">Gerador de posts</a><a href="#textos">Textos prontos</a><a href="#regras">Regras</a>
+</div></nav>
+
+<header class="hero pixel-grid-bg"><div class="wrap">
+  <img src="kit/camelia-logo-laranja.png" alt="Camelia Labs">
+  <span class="eyebrow">Kit do embaixador · v1</span>
+  <h1>Tudo que você precisa para falar da Camelia.</h1>
+  <p class="lead">Logo, cores, fontes, um gerador de posts e textos prontos. Sem designer, sem Figma. Baixe, cole, publique.</p>
+  <div class="ctas">
+    <a class="btn" href="#gerador">Criar um post agora</a>
+    <a class="btn sec" href="kit/camelia-logo-laranja.png" download>Baixar logo</a>
+  </div>
+</div></header>
+
+<!-- LOGO -->
+<section id="logo"><div class="wrap">
+  <span class="eyebrow">01 · Logo</span>
+  <h2>Uma marca, quatro combinações.</h2>
+  <p class="lead">Use sempre os arquivos oficiais. Nunca redesenhe, estique ou troque a fonte do logo.</p>
+  <div class="grid g2" style="margin-top:28px">
+    <div>
+      <div class="logo-tile" style="background:var(--creme);border:1px solid var(--borda)"><span class="pix lbl">coral sobre creme</span><img src="kit/camelia-logo-laranja.png" alt=""></div>
+      <div class="logo-actions"><a class="btn sm" href="kit/camelia-logo-laranja.png" download>Baixar PNG</a><span class="mono" style="align-self:center;color:var(--pixel)">2000 × 368</span></div>
+    </div>
+    <div>
+      <div class="logo-tile" style="background:var(--coral)"><span class="pix lbl" style="color:var(--creme)">creme sobre coral</span><img src="kit/camelia-logo-creme.png" alt=""></div>
+      <div class="logo-actions"><a class="btn sm" href="kit/camelia-logo-creme.png" download>Baixar PNG</a><span class="mono" style="align-self:center;color:var(--pixel)">também sobre marrom</span></div>
+    </div>
+    <div>
+      <div class="logo-tile" style="background:var(--lilas)"><span class="pix lbl" style="color:var(--marrom)">marrom sobre lilás</span><img src="kit/camelia-logo-marrom.png" alt=""></div>
+      <div class="logo-actions"><a class="btn sm" href="kit/camelia-logo-marrom.png" download>Baixar PNG</a></div>
+    </div>
+    <div>
+      <div class="logo-tile" style="background:linear-gradient(160deg,#4A2314,#6E3A20)"><span class="pix lbl" style="color:var(--creme)">creme sobre marrom</span><img src="kit/camelia-logo-creme.png" alt=""></div>
+      <div class="logo-actions"><a class="btn sm" href="kit/camelia-logo-creme.png" download>Baixar PNG</a></div>
+    </div>
+  </div>
+
+  <h3 style="margin-top:44px">Símbolo e avatar</h3>
+  <p>A flor pixelada funciona sozinha em foto de perfil, selo e favicon. Sempre com bordas duras, nunca suavizada.</p>
+  <div class="grid g3" style="margin-top:16px">
+    <div>
+      <div class="logo-tile" style="background:var(--coral)"><img class="sym" src="kit/camelia-simbolo-creme.png" alt=""></div>
+      <div class="logo-actions"><a class="btn sm" href="kit/camelia-simbolo-creme.png" download>Símbolo creme</a></div>
+    </div>
+    <div>
+      <div class="logo-tile" style="background:var(--creme);border:1px solid var(--borda)"><img class="sym" src="kit/camelia-simbolo-laranja.png" alt=""></div>
+      <div class="logo-actions"><a class="btn sm" href="kit/camelia-simbolo-laranja.png" download>Símbolo coral</a></div>
+    </div>
+    <div>
+      <div class="logo-tile" style="background:var(--verde)"><img class="sym" src="kit/camelia-simbolo-marrom.png" alt=""></div>
+      <div class="logo-actions"><a class="btn sm" href="kit/camelia-simbolo-marrom.png" download>Símbolo marrom</a></div>
+    </div>
+    <div>
+      <div class="logo-tile" style="background:var(--creme-alt)"><img src="kit/camelia-avatar-coral.png" alt="" style="width:120px;border-radius:50%"></div>
+      <div class="logo-actions"><a class="btn sm" href="kit/camelia-avatar-coral.png" download>Avatar coral</a></div>
+    </div>
+    <div>
+      <div class="logo-tile" style="background:var(--creme-alt)"><img src="kit/camelia-avatar-creme.png" alt="" style="width:120px;border-radius:50%"></div>
+      <div class="logo-actions"><a class="btn sm" href="kit/camelia-avatar-creme.png" download>Avatar creme</a></div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:28px">
+    <h3>Regras rápidas</h3>
+    <div class="rule ok"><i>SIM</i><span>Área de respiro: deixe ao redor do logo um espaço igual à altura da letra "C".</span></div>
+    <div class="rule ok"><i>SIM</i><span>Tamanho mínimo: 120 px de largura na tela, 25 mm no impresso.</span></div>
+    <div class="rule no"><i>NÃO</i><span>Não coloque o logo sobre foto sem um bloco de cor chapada por baixo.</span></div>
+    <div class="rule no"><i>NÃO</i><span>Não use sombra, contorno, gradiente ou rotação no logo.</span></div>
+  </div>
+</div></section>
+
+<!-- CORES -->
+<section id="cores" class="alt"><div class="wrap">
+  <span class="eyebrow">02 · Cores</span>
+  <h2>Seis cores. Coral é a que age.</h2>
+  <p class="lead">Clique em qualquer cor para copiar o código. Botões e links são sempre coral. Lilás e verde são só detalhe.</p>
+  <div class="grid g3" style="margin-top:28px" id="swatches">
+    <div class="sw" data-hex="#FA733C" style="background:#FA733C;color:#fff"><span class="cp">copiar</span><b>Coral</b><span class="hex">#FA733C</span></div>
+    <div class="sw" data-hex="#552614" style="background:#552614;color:#FFF7E4"><span class="cp">copiar</span><b>Marrom</b><span class="hex">#552614</span></div>
+    <div class="sw" data-hex="#FFF7E4" style="background:#FFF7E4;color:#552614"><span class="cp">copiar</span><b>Creme</b><span class="hex">#FFF7E4</span></div>
+    <div class="sw" data-hex="#F4F55B" style="background:#F4F55B;color:#552614"><span class="cp">copiar</span><b>Verde-limão</b><span class="hex">#F4F55B</span></div>
+    <div class="sw" data-hex="#E2D0FA" style="background:#E2D0FA;color:#552614"><span class="cp">copiar</span><b>Lilás</b><span class="hex">#E2D0FA</span></div>
+    <div class="sw" data-hex="#232323" style="background:#232323;color:#FFF7E4"><span class="cp">copiar</span><b>Chumbo</b><span class="hex">#232323</span></div>
+  </div>
+  <p class="mono" style="margin-top:18px;color:var(--pixel)">Evite: azul corporativo, preto com neon, gradiente roxo-azulado de "IA genérica". Fundo claro é creme, não branco.</p>
+</div></section>
+
+<!-- FONTES -->
+<section id="fontes"><div class="wrap">
+  <span class="eyebrow">03 · Fontes</span>
+  <h2>Três fontes, todas gratuitas.</h2>
+  <p class="lead">Estão no Google Fonts e no Canva. Se não puder instalar, use as alternativas indicadas.</p>
+  <div class="grid g3" style="margin-top:28px">
+    <div class="card">
+      <span class="pix">Títulos</span>
+      <div class="font-sample" style="font-family:Fraunces,serif;font-weight:400">Fraunces</div>
+      <p>Serifada, elegante, pesos Light e Regular. Alternativa: Georgia.</p>
+      <a class="btn sm sec" style="margin-top:14px" href="https://fonts.google.com/specimen/Fraunces" target="_blank" rel="noopener">Baixar no Google Fonts</a>
+    </div>
+    <div class="card">
+      <span class="pix">Corpo e dados</span>
+      <div class="font-sample" style="font-family:'Google Sans Code',monospace;font-size:28px">Google Sans Code</div>
+      <p>Mono, leve, para textos curtos e números. Alternativa: IBM Plex Mono ou Courier New.</p>
+      <a class="btn sm sec" style="margin-top:14px" href="https://fonts.google.com/specimen/Google+Sans+Code" target="_blank" rel="noopener">Baixar no Google Fonts</a>
+    </div>
+    <div class="card">
+      <span class="pix">Detalhes pixel</span>
+      <div class="font-sample" style="font-family:Silkscreen,monospace;font-size:26px;text-transform:uppercase">Silkscreen</div>
+      <p>Só em caixa alta, só em palavras curtas: tags, datas, números de passo.</p>
+      <a class="btn sm sec" style="margin-top:14px" href="https://fonts.google.com/specimen/Silkscreen" target="_blank" rel="noopener">Baixar no Google Fonts</a>
+    </div>
+  </div>
+</div></section>
+
+<!-- GERADOR -->
+<section id="gerador" class="alt"><div class="wrap">
+  <span class="eyebrow">04 · Gerador de posts</span>
+  <h2>Escreva, escolha a cor, baixe.</h2>
+  <p class="lead">Post, story ou capa de LinkedIn no padrão da marca. Você só preenche o texto.</p>
+  <div class="gen" style="margin-top:28px">
+    <div class="card">
+      <div class="field"><label>Formato</label>
+        <select id="fmt">
+          <option value="post">Post quadrado · 1080 × 1080</option>
+          <option value="story">Story · 1080 × 1920</option>
+          <option value="linkedin">Capa LinkedIn · 1584 × 396</option>
+          <option value="feed">Post LinkedIn · 1200 × 627</option>
+        </select>
+      </div>
+      <div class="field"><label>Fundo</label>
+        <div class="chips" id="bg">
+          <div class="chip on" data-bg="coral" style="background:#FA733C" title="Coral"></div>
+          <div class="chip" data-bg="marrom" style="background:linear-gradient(160deg,#4A2314,#6E3A20)" title="Marrom"></div>
+          <div class="chip" data-bg="creme" style="background:#FFF7E4;border-color:#EBDCBB" title="Creme"></div>
+          <div class="chip" data-bg="lilas" style="background:#E2D0FA" title="Lilás"></div>
+          <div class="chip" data-bg="verde" style="background:#F4F55B" title="Verde"></div>
+          <div class="chip" data-bg="chumbo" style="background:#232323" title="Chumbo"></div>
+        </div>
+      </div>
+      <div class="field"><label>Tag (pixel)</label><input id="tag" value="Embaixador Camelia Labs" maxlength="40"></div>
+      <div class="field"><label>Título</label><textarea id="title">Seu time completo de IA.</textarea></div>
+      <div class="field"><label>Texto de apoio</label><textarea id="sub">Diagnóstico, desenvolvimento e manutenção. De ponta a ponta, dentro da sua empresa.</textarea></div>
+      <div class="field"><label>Seu nome (opcional)</label><input id="name" placeholder="Ex.: Ana Souza · Embaixadora"></div>
+      <button class="btn" id="dl" style="width:100%;justify-content:center">Baixar PNG</button>
+    </div>
+    <div class="preview">
+      <canvas id="cv" width="1080" height="1080"></canvas>
+      <span class="pix" id="dim">1080 × 1080</span>
+    </div>
+  </div>
+</div></section>
+
+<!-- TEXTOS -->
+<section id="textos"><div class="wrap">
+  <span class="eyebrow">05 · Textos prontos</span>
+  <h2>Como falar da Camelia.</h2>
+  <p class="lead">Português direto, sem jargão. Nada de "soluções disruptivas". A Camelia entrega capacidade, não slides.</p>
+  <div class="grid g2" style="margin-top:28px">
+    <div class="card txt"><span class="pix">Uma frase</span>
+      <p>A Camelia Labs é o time completo de IA da sua empresa: diagnóstico, desenvolvimento sob medida e manutenção, de ponta a ponta.</p>
+      <button class="btn sm sec cpy">Copiar</button></div>
+    <div class="card txt"><span class="pix">Bio curta (perfil)</span>
+      <p>Embaixador(a) da Camelia Labs · Human first, powered by AI · Construindo empresas mais inteligentes.</p>
+      <button class="btn sm sec cpy">Copiar</button></div>
+    <div class="card txt"><span class="pix">Apresentação (mensagem ou e-mail)</span>
+      <p>Oi! Sou embaixador(a) da Camelia Labs, a divisão de IA da Odyssey Idea Studio.
+
+A Camelia não é consultoria: ela funciona como o time de IA dentro da sua empresa. Começa com um diagnóstico de duas semanas, desenvolve o que faz sentido e cuida da manutenção depois.
+
+Se quiser, te apresento o time. Topa uma conversa de 20 minutos?</p>
+      <button class="btn sm sec cpy">Copiar</button></div>
+    <div class="card txt"><span class="pix">Post curto (rede social)</span>
+      <p>Consultoria entrega slides. A Camelia entrega capacidade.
+
+Diagnóstico em 2 semanas, software sob medida e um time de IA que fica. Se sua empresa quer sair do piloto e ir para a operação, fala comigo.
+
+#CameliaLabs #HumanFirst</p>
+      <button class="btn sm sec cpy">Copiar</button></div>
+  </div>
+  <div class="card" style="margin-top:18px">
+    <h3>Tom de voz em três linhas</h3>
+    <div class="rule ok"><i>SIM</i><span>Direto e confiante: "entregamos capacidade instalada".</span></div>
+    <div class="rule ok"><i>SIM</i><span>Começar com "Oi" é parte da marca.</span></div>
+    <div class="rule no"><i>NÃO</i><span>Jargão de consultoria, promessa de "revolução", emoji de robô ou cérebro.</span></div>
+  </div>
+</div></section>
+
+<!-- REGRAS -->
+<section id="regras" class="alt"><div class="wrap">
+  <span class="eyebrow">06 · Regras</span>
+  <h2>Pode e não pode.</h2>
+  <div class="grid g2" style="margin-top:28px">
+    <div class="card">
+      <h3 style="color:var(--coral)">Pode</h3>
+      <div class="rule ok"><i>SIM</i><span>Usar o logo e o símbolo dos arquivos deste kit.</span></div>
+      <div class="rule ok"><i>SIM</i><span>Criar posts no gerador ou no Canva com estas cores e fontes.</span></div>
+      <div class="rule ok"><i>SIM</i><span>Usar fotos quentes: pessoas trabalhando, flores, objetos em terracota.</span></div>
+      <div class="rule ok"><i>SIM</i><span>Se identificar como "embaixador(a) da Camelia Labs".</span></div>
+    </div>
+    <div class="card">
+      <h3 style="color:var(--marrom)">Não pode</h3>
+      <div class="rule no"><i>NÃO</i><span>Alterar cor, proporção ou fonte do logo.</span></div>
+      <div class="rule no"><i>NÃO</i><span>Imagens de robô, cérebro digital, circuito azul ou "matrix".</span></div>
+      <div class="rule no"><i>NÃO</i><span>Prometer prazo, preço ou resultado em nome da Camelia.</span></div>
+      <div class="rule no"><i>NÃO</i><span>Falar como se fosse funcionário. Você é embaixador(a).</span></div>
+    </div>
+  </div>
+  <p style="margin-top:24px">Dúvida sobre uso da marca? Fale com o time da Camelia Labs antes de publicar.</p>
+</div></section>
+
+<footer><div class="wrap">
+  <img src="kit/camelia-simbolo-laranja.png" alt="" style="width:22px;image-rendering:pixelated;margin-bottom:10px">
+  <span class="mono" style="color:var(--pixel)">Camelia Labs · Kit do embaixador v1 · Guia completo em <a href="https://github.com/sophiaodyssey/landing-page/blob/main/DESIGN-SYSTEM.md">DESIGN-SYSTEM.md</a></span>
+</div></footer>
+
+<div class="toast" id="toast">copiado</div>
+
+<script>
+const $=s=>document.querySelector(s);
+const toast=m=>{const t=$('#toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1400)};
+const copy=t=>navigator.clipboard.writeText(t).then(()=>toast('copiado'));
+document.querySelectorAll('.sw').forEach(s=>s.onclick=()=>copy(s.dataset.hex));
+document.querySelectorAll('.cpy').forEach(b=>b.onclick=()=>copy(b.parentElement.querySelector('p').textContent));
+
+/* ---------- gerador ---------- */
+const FMT={post:[1080,1080],story:[1080,1920],linkedin:[1584,396],feed:[1200,627]};
+const BG={
+  coral:{fill:'#FA733C',txt:'#FFF7E4',sub:'rgba(255,247,228,.85)',tag:'#F4F55B',logo:'creme',dots:'rgba(85,38,20,.18)'},
+  marrom:{grad:['#4A2314','#6E3A20'],txt:'#FFF7E4',sub:'rgba(255,247,228,.8)',tag:'#F4F55B',logo:'creme',dots:'rgba(255,247,228,.12)'},
+  creme:{fill:'#FFF7E4',txt:'#2E1A10',sub:'#6B5040',tag:'#FA733C',logo:'laranja',dots:'rgba(85,38,20,.14)'},
+  lilas:{fill:'#E2D0FA',txt:'#552614',sub:'rgba(85,38,20,.8)',tag:'#FA733C',logo:'marrom',dots:'rgba(85,38,20,.14)'},
+  verde:{fill:'#F4F55B',txt:'#552614',sub:'rgba(85,38,20,.8)',tag:'#552614',logo:'marrom',dots:'rgba(85,38,20,.14)'},
+  chumbo:{fill:'#232323',txt:'#FFF7E4',sub:'rgba(255,247,228,.75)',tag:'#FA733C',logo:'creme',dots:'rgba(255,247,228,.1)'}
+};
+const logos={};
+['creme','laranja','marrom'].forEach(c=>{const i=new Image();i.src=`kit/camelia-logo-${c}.png`;i.onload=draw;logos[c]=i});
+const sym={};
+['creme','laranja','marrom'].forEach(c=>{const i=new Image();i.src=`kit/camelia-simbolo-${c}.png`;i.onload=draw;sym[c]=i});
+let bg='coral';
+$('#bg').onclick=e=>{const c=e.target.closest('.chip');if(!c)return;document.querySelectorAll('.chip').forEach(x=>x.classList.remove('on'));c.classList.add('on');bg=c.dataset.bg;draw()};
+['#fmt','#tag','#title','#sub','#name'].forEach(s=>$(s).addEventListener('input',draw));
+$('#fmt').addEventListener('change',draw);
+
+function wrap(ctx,text,x,y,maxW,lh){
+  const out=[];text.split('\n').forEach(par=>{let line='';par.split(' ').forEach(w=>{const t=line?line+' '+w:w;if(ctx.measureText(t).width>maxW&&line){out.push(line);line=w}else line=t});out.push(line)});
+  out.forEach((l,i)=>ctx.fillText(l,x,y+i*lh));return y+out.length*lh;
+}
+function draw(){
+  const cv=$('#cv'),ctx=cv.getContext('2d');
+  const [W,H]=FMT[$('#fmt').value];cv.width=W;cv.height=H;$('#dim').textContent=`${W} × ${H}`;
+  const t=BG[bg];
+  if(t.grad){const g=ctx.createLinearGradient(0,0,W,H);g.addColorStop(0,t.grad[0]);g.addColorStop(1,t.grad[1]);ctx.fillStyle=g}else ctx.fillStyle=t.fill;
+  ctx.fillRect(0,0,W,H);
+  // pixel grid
+  ctx.fillStyle=t.dots;const step=Math.round(W/60);
+  for(let y=step;y<H;y+=step)for(let x=step;x<W;x+=step)ctx.fillRect(x,y,2,2);
+  const ratio=W/H, wide=ratio>2, mid=!wide&&ratio>1.5, pad=Math.round(W*(wide?.05:mid?.06:.08)), S=wide?H:W; // escala base
+  // logo
+  const lg=logos[t.logo];
+  if(lg&&lg.complete){const lw=Math.round(S*(wide?.62:mid?.26:.34)),lh=lw*lg.height/lg.width;ctx.imageSmoothingEnabled=false;ctx.drawImage(lg,pad,pad,lw,lh)}
+  // símbolo grande no canto
+  const sy=sym[t.logo];
+  if(sy&&sy.complete){const ss=Math.round(S*(wide?.55:.42));ctx.globalAlpha=.16;ctx.drawImage(sy,W-ss*.72,H-ss*.72,ss,ss);ctx.globalAlpha=1}
+  // textos
+  ctx.textBaseline='top';
+  const tagS=Math.round(S*(wide?.04:mid?.018:.022)),titS=Math.round(S*(wide?.11:mid?.058:.075)),subS=Math.round(S*(wide?.042:mid?.024:.031)),maxW=W-pad*2-(wide?S*.9:0);
+  let y=wide?pad+S*.1:mid?H*.27:H*(($('#fmt').value==='story')?.34:.36);
+  const x=wide?pad+S*.72:pad;
+  ctx.fillStyle=t.tag;ctx.font=`${tagS}px Silkscreen`;
+  const tag=$('#tag').value.trim();if(tag){ctx.fillText(tag.toUpperCase(),x,y);y+=tagS*2}
+  ctx.fillStyle=t.txt;ctx.font=`400 ${titS}px Fraunces`;
+  y=wrap(ctx,$('#title').value.trim(),x,y,maxW,titS*1.06)+subS*.9;
+  ctx.fillStyle=t.sub;ctx.font=`300 ${subS}px "Google Sans Code"`;
+  const sub=$('#sub').value.trim();if(sub)y=wrap(ctx,sub,x,y,maxW*.9,subS*1.5);
+  const nm=$('#name').value.trim();
+  if(nm){ctx.fillStyle=t.tag;ctx.font=`${Math.round(tagS*.9)}px Silkscreen`;ctx.textBaseline='bottom';ctx.fillText(nm.toUpperCase(),pad,H-pad)}
+  if(!wide){ctx.fillStyle=t.sub;ctx.font=`${Math.round(tagS*.9)}px Silkscreen`;ctx.textBaseline='bottom';ctx.textAlign='right';ctx.fillText('HUMAN FIRST, POWERED BY AI',W-pad,H-pad);ctx.textAlign='left'}
+}
+$('#dl').onclick=()=>{const a=document.createElement('a');a.download=`camelia-${$('#fmt').value}-${bg}.png`;a.href=$('#cv').toDataURL('image/png');a.click()};
+document.fonts.ready.then(draw);
+Promise.all(['400 40px Fraunces','12px Silkscreen','300 20px "Google Sans Code"'].map(f=>document.fonts.load(f))).then(draw);
+draw();
+</script>
+</body>
+</html>
